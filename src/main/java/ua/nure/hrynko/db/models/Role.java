@@ -13,15 +13,14 @@ import java.util.List;
 @Entity(name = "roles")
 public class Role implements Serializable {
     @Id
-    private int id;
-    @NotNull
+    private Integer id;
+
     @Size(max = 256)
     @Column(name = "name", nullable = false)
     private String name;
-    @NotNull
+
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "roles_id", referencedColumnName = "id")
-
     private List<User> users;
 
     public void setId(int id) {

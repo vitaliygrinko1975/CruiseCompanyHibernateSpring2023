@@ -11,14 +11,14 @@ import java.util.Objects;
  */
 @Entity(name = "accounts")
 public class Account implements Serializable {
-    private static final long serialVersionUID = 4716395168539434663L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @NotNull
     @Column(name = "balance", nullable = false)
     private Double balance;
-    @NotNull
+
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "accounts_id", referencedColumnName = "id")
     private List<User> users;
@@ -30,17 +30,7 @@ public class Account implements Serializable {
     public void setBalance(double balance) {
         this.balance = balance;
     }
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Account)) return false;
-        Account account = (Account) o;
-        return id.equals(account.id) && balance.equals(account.balance);
-    }
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, balance);
-    }
+
     @Override
     public String toString() {
         return "Account{" +

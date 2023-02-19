@@ -29,10 +29,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-//                .antMatchers("/registrationUser").not().fullyAuthenticated()
+//                .antMatchers("/signUpPage").not().fullyAuthenticated()
                 .antMatchers( "/resources/**").permitAll()
-                .antMatchers("/adminPageUsers")
-                .access("hasRole('ADMIN')");
+                .antMatchers("/remove").access("hasRole('ADMIN')");
         http.formLogin()
                 .loginPage("/login").permitAll()
                 .and().logout().logoutUrl("/login?logout")

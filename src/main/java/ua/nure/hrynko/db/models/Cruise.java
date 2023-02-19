@@ -29,7 +29,7 @@ public class Cruise implements Serializable {
     @Column(name = "capacity", nullable = false)
     private Integer capacity;
     @NotNull
-    @Column(name = "startOfCruise", nullable = false)
+    @Column(name = "start_of_cruise", nullable = false)
     private Date startOfCruise;
     @Column(name = "duration", nullable = false)
     private Integer duration;
@@ -54,17 +54,7 @@ public class Cruise implements Serializable {
     public void setDuration(Integer duration) {this.duration = duration;}
     public String getStatus() {return status;}
     public void setStatus(String status) {this.status = status;}
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Cruise)) return false;
-        Cruise cruise = (Cruise) o;
-        return id.equals(cruise.id) && name.equals(cruise.name) && description.equals(cruise.description) && price.equals(cruise.price) && capacity.equals(cruise.capacity) && startOfCruise.equals(cruise.startOfCruise) && duration.equals(cruise.duration) && status.equals(cruise.status);
-    }
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, description, price, capacity, startOfCruise, duration, status);
-    }
+
     @Override
     public String toString() {
         return "Cruise{" +

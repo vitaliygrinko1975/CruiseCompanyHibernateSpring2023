@@ -11,40 +11,36 @@
 <body>
 <div align='right'>
     <div style="display: inline-block; padding-right: 50px;">
-        <form method="get" action="controller">
-            <input type="hidden" name="command" value="loginPage"/>
+        <form method="get" action="forRegistered">
             <input type="hidden" name="local" value="en"/>
-            <button type="submit" name = "removeButt" value = 0
+            <button type="submit"
                     class="btn btn-primary btn-block btn-large">FOR REGISTERED</button>
         </form>
     </div>
 </div>
 <div align='right'>
     <div style="display: inline-block; padding-right: 50px;">
-        <form method="get" action="controller">
-            <input type="hidden" name="command" value="loginPage"/>
+        <form method="get" action="forRegistered">
             <input type="hidden" name="local" value="ru"/>
-            <button type="submit" name = "removeButt" value = 0
+            <button type="submit"
                     class="btn btn-primary btn-block btn-large">ДЛЯ ЗАРЕГИСТРИРОВАННЫХ</button>
         </form>
     </div>
 </div>
 <div align='right'>
     <div style="display: inline-block; padding-right: 50px;">
-<form method="get" action="controller">
-    <input type="hidden" name="command" value="signUpPage"/>
+<form method="get" action="registrationPage">
     <input type="hidden"name="local" value="en"/>
-    <button type="submit" name = "removeButt" value = 0
+    <button type="submit"
             class="btn btn-primary btn-block btn-large">REGISTRATION</button>
 </form>
     </div>
 </div>
 <div align='right'>
     <div style="display: inline-block; padding-right: 50px;">
-        <form method="get" action="controller">
-            <input type="hidden" name="command" value="signUpPage"/>
+        <form method="get" action="registrationPage">
             <input type="hidden"name="local" value="ru"/>
-            <button type="submit" name = "removeButt" value = 0
+            <button type="submit"
                     class="btn btn-primary btn-block btn-large">РЕГИСТРАЦИЯ</button>
         </form>
     </div>

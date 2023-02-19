@@ -4,14 +4,12 @@ import javax.persistence.Entity;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
-import java.util.Objects;
 
 /**
  * User entity.
  */
     @Entity(name = "users")
     public class User implements Serializable {
-    private static final long serialVersionUID = -6889036256149495388L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -48,10 +46,10 @@ import java.util.Objects;
     @JoinColumn(name = "accounts_id", nullable = false)
     private Account account;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
     public String getLogin() {
@@ -96,17 +94,7 @@ import java.util.Objects;
     }
     public Account getAccount() {return account;}
     public void setAccount(Account account) {this.account = account;}
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof User)) return false;
-        User user = (User) o;
-        return id.equals(user.id) && login.equals(user.login) && password.equals(user.password) && firstName.equals(user.firstName) && lastName.equals(user.lastName) && email.equals(user.email) && phone.equals(user.phone) && role.equals(user.role) && account.equals(user.account);
-    }
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, login, password, firstName, lastName, email, phone, role, account);
-    }
+
     @Override
     public String toString() {
         return "User{" +

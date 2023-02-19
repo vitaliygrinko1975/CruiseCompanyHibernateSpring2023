@@ -15,7 +15,7 @@ public class Ship implements Serializable {
     private static final long serialVersionUID = -6889036256149495388L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     @NotNull
     @Size(max = 256)
     @Column(name = "name", nullable = false)
@@ -37,17 +37,7 @@ public class Ship implements Serializable {
     public Integer getCapacity() {return capacity;}
     public void setCapacity(Integer capacity) {this.capacity = capacity;}
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Ship)) return false;
-        Ship ship = (Ship) o;
-        return id == ship.id && name.equals(ship.name) && description.equals(ship.description) && capacity.equals(ship.capacity);
-    }
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, description, capacity);
-    }
+
     @Override
     public String toString() {
         return "Ship{" +

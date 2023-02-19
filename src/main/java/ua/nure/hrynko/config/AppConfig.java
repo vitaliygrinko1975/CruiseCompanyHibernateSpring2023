@@ -43,7 +43,7 @@ public class AppConfig {
 
         Properties props=new Properties();
         props.put(SHOW_SQL, env.getProperty("hibernate.show_sql"));
-        props.put(HBM2DDL_AUTO, env.getProperty("hibernate.provider"));
+        props.put(HBM2DDL_AUTO, env.getProperty("hibernate.cruises"));
         props.setProperty("hibernate.dialect", env.getProperty("hibernate.dialect"));
         props.setProperty("hibernate.context", env.getProperty("hibernate.context"));
 

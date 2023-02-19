@@ -86,30 +86,30 @@ CREATE TABLE orders
     FOREIGN KEY (cruises_id) REFERENCES cruises (Id) ON DELETE CASCADE
 
 );
-
-CREATE VIEW orders_view AS SELECT o.id AS id,
-                                  u.first_name AS first_name,
-                                  u.last_name AS last_name,
-                                  u.email AS email,
-                                  u.id AS users_id,
-                                  c.description AS description,
-                                  c.status AS status_of_cruises,
-                                  o.status AS status
-                                  FROM orders AS o
-                                  JOIN users AS u ON o.users_id = u.id
-                                  JOIN cruises AS c ON o.cruises_id = c.id;
-
-CREATE TABLE cruises_has_ships
-(
-    id                       INTEGER     NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    cruises_id               INTEGER     NOT NULL,
-    ships_id                 INTEGER     NOT NULL,
-    start_of_contract        DATETIME    NOT NULL,
-    end_of_contract          DATETIME    NOT NULL,
-    status                   VARCHAR(45) NOT NULL,
-    FOREIGN KEY (cruises_id) REFERENCES cruises (Id) ON DELETE CASCADE,
-    FOREIGN KEY (ships_id)   REFERENCES ships (Id) ON DELETE CASCADE
-);
+--
+-- CREATE VIEW orders_view AS SELECT o.id AS id,
+--                                   u.first_name AS first_name,
+--                                   u.last_name AS last_name,
+--                                   u.email AS email,
+--                                   u.id AS users_id,
+--                                   c.description AS description,
+--                                   c.status AS status_of_cruises,
+--                                   o.status AS status
+--                                   FROM orders AS o
+--                                   JOIN users AS u ON o.users_id = u.id
+--                                   JOIN cruises AS c ON o.cruises_id = c.id;
+--
+-- CREATE TABLE cruises_has_ships
+-- (
+--     id                       INTEGER     NOT NULL AUTO_INCREMENT PRIMARY KEY,
+--     cruises_id               INTEGER     NOT NULL,
+--     ships_id                 INTEGER     NOT NULL,
+--     start_of_contract        DATETIME    NOT NULL,
+--     end_of_contract          DATETIME    NOT NULL,
+--     status                   VARCHAR(45) NOT NULL,
+--     FOREIGN KEY (cruises_id) REFERENCES cruises (Id) ON DELETE CASCADE,
+--     FOREIGN KEY (ships_id)   REFERENCES ships (Id) ON DELETE CASCADE
+-- );
 
 INSERT INTO roles (id,name)
 VALUES (1,'ROLE_ADMIN');
@@ -126,7 +126,7 @@ VALUES ('admin', '$2a$10$y3mvWzqGZ6knuvsRkgH9nOyBigfnmcR6adbjmUIe6tNixLcBgIDRS',
         '+380992589898', 1, 1);
 
 INSERT INTO users (login, password, first_name, last_name, email, phone, roles_id, accounts_id)
-VALUES ('client', '$2a$10$k8PaITNkwNMSV2VVHQyZ6O/5uAuz/atRgbyenaaRgwrEWpiq7i6km', ' Petr ', 'Petrov', 'client@gmail.com',
+VALUES ('user', '$2a$10$k8PaITNkwNMSV2VVHQyZ6O/5uAuz/atRgbyenaaRgwrEWpiq7i6km', ' Petr ', 'Petrov', 'client@gmail.com',
         '+380992589896', 2, 2);
 
 
@@ -158,7 +158,7 @@ VALUES ('Среднее путишествие', 'Одесса-Стамбул-Л
 INSERT INTO cruises (name, description, price,capacity, start_of_cruise, duration,status)
 VALUES ('Большое путишествие', 'Одесса-Стамбул-Палермо-Барселона-Лиссабон-Одесса', '10000',
         2000,20221224120000, 15,'Не начался');
-
+INSERT INTO orders (users_id,cruises_id,status)VALUES (2, 1,'Не оплачен');
 
 
 SELECT *
