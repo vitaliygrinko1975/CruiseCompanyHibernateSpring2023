@@ -8,13 +8,15 @@
 <head>
     <link href='<c:url value="/resources/style/style2.css"/>' rel='stylesheet' type='text/css'>
 </head>
-<fmt:setLocale value="${local}"/>
-<c:if test="${local == null}">
-    <fmt:setLocale value="ru"/>
-</c:if>
-<c:if test="${local != null}">
+
+
+<%--<c:if test="${local == null}">--%>
+<%--    <fmt:setLocale value="ru"/>--%>
+<%--</c:if>--%>
+<%--<c:if test="${local != null}">--%>
+    
     <fmt:setLocale value="${local}"/>
-</c:if>
+<%--</c:if>--%>
 <fmt:setBundle basename="local" var="loc"/>
 <fmt:message bundle="${loc}" key="local.logout" var="logout"/>
 <fmt:message bundle="${loc}" key="local.basket" var="basket"/>
@@ -41,10 +43,10 @@
 <ul>
     <li><a href="controller?command=clientPageGoToMyProfile&userId=${user.id}">${my_profile}</a></li>
 
-    <li style="float:right"><a href="controller?command=logout">${logout}</a></li>
+    <li style="float:right"><a href="login?logout">${logout}</a></li>
     <li style="float:right"><a href="controller?command=goToBasket">${basket}</a></li>
-    <li style="float:right"><a href="controller?command=clientPage&local=en">${en}</a></li>
-    <li style="float:right"><a href="controller?command=clientPage&local=ru">${ru}</a></li>
+    <li style="float:right"><a href="?local=en">${en}</a></li>
+    <li style="float:right"><a href="?local=ru">${ru}</a></li>
 </ul>
 <div align='right'>
     <c:set var="count" value="0"/>

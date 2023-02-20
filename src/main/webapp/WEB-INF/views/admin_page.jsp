@@ -8,12 +8,14 @@
 <head>
     <link href='<c:url value="/resources/style/style2.css"/>' rel='stylesheet' type='text/css'>
 </head>
-<c:if test="${local == null}">
-    <fmt:setLocale value="ru"/>
-</c:if>
-<c:if test="${local != null}">
+
+<%--<c:if test="${local == null}">--%>
+<%--    <fmt:setLocale value="ru"/>--%>
+<%--</c:if>--%>
+<%--<c:if test="${local != null}">--%>
     <fmt:setLocale value="${local}"/>
-</c:if>
+<%--</c:if>--%>
+
 <fmt:setBundle basename="local" var="loc"/>
 <fmt:message bundle="${loc}" key="local.logout" var="logout"/>
 <fmt:message bundle="${loc}" key="local.admin_page" var="admin_page"/>
@@ -39,10 +41,12 @@
     <li><a href="pageAdminCruises">${cruises}</a></li>
     <li><a href="pageAdminOrders">${orders}</a></li>
 
-    <li style="float:right"><a href="logout">${logout}</a></li>
-    <li style="float:right"><a href="adminPage&local=en">${en}</a></li>
-    <li style="float:right"><a href="adminPage&local=ru">${ru}</a></li>
+    <li style="float:right"><a href="login?logout">${logout}</a></li>
+    <li style="float:right"><a href="?local=en">${en}</a></li>
+    <li style="float:right"><a href="?local=ru">${ru}</a></li>
 </ul>
+
+
 
 <h1 align='center'>${admin_page}</h1>
 <div align='center'>
