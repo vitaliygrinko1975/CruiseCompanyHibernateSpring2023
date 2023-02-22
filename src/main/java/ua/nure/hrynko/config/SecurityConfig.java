@@ -24,14 +24,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
     }
-
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
 //                .antMatchers("/signUpPage").not().fullyAuthenticated()
                 .antMatchers( "/resources/**").permitAll()
-                .antMatchers("/remove").access("hasRole('ADMIN')");
+                .antMatchers("/remove").access("hasRole('ADMIN')")
+                .antMatchers("/goToBasket").access("hasRole('USER')");
+
         http.formLogin()
                 .loginPage("/login").permitAll()
                 .and().logout().logoutUrl("/login?logout")
@@ -39,8 +39,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .deleteCookies("JSESSIONID").permitAll()
                 .and().exceptionHandling().accessDeniedPage("/403");
     }
-
-
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();

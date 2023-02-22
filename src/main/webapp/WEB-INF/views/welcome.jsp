@@ -29,7 +29,7 @@
 </div>
 <div align='right'>
     <div style="display: inline-block; padding-right: 50px;">
-<form method="get" action="registrationPage">
+<form method="get" action="signUpPage">
     <input type="hidden"name="local" value="en"/>
     <button type="submit"
             class="btn btn-primary btn-block btn-large">REGISTRATION</button>
@@ -38,7 +38,7 @@
 </div>
 <div align='right'>
     <div style="display: inline-block; padding-right: 50px;">
-        <form method="get" action="registrationPage">
+        <form method="get" action="signUpPage">
             <input type="hidden"name="local" value="ru"/>
             <button type="submit"
                     class="btn btn-primary btn-block btn-large">РЕГИСТРАЦИЯ</button>

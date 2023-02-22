@@ -21,7 +21,8 @@ CREATE TABLE roles
 CREATE TABLE accounts
 (
     id      INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    balance DOUBLE  NOT NULL
+    balance DOUBLE  NOT NULL,
+    file_name  VARCHAR(255) NOT NULL
 );
 
 
@@ -116,10 +117,10 @@ VALUES (1,'ROLE_ADMIN');
 INSERT INTO roles (id,name)
 VALUES (2,'ROLE_USER');
 
-INSERT INTO accounts (balance)
-VALUES (0);
-INSERT INTO accounts (balance)
-VALUES (0);
+INSERT INTO accounts (balance, file_name)
+VALUES (0, 'Пусто');
+INSERT INTO accounts (balance, file_name)
+VALUES (0,'Пусто');
 
 INSERT INTO users (login, password, first_name, last_name, email, phone, roles_id, accounts_id)
 VALUES ('admin', '$2a$10$y3mvWzqGZ6knuvsRkgH9nOyBigfnmcR6adbjmUIe6tNixLcBgIDRS', ' Ivan ', 'Ivanov', 'admin@gmail.com',

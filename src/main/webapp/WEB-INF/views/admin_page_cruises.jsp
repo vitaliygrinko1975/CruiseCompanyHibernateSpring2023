@@ -7,45 +7,38 @@
     <link href='<c:url value="/resources/style/style2.css"/>' rel='stylesheet' type='text/css'>
 </head>
 
-<c:if test="${local == null}">
-    <fmt:setLocale value="ru"/>
-</c:if>
-<c:if test="${local != null}">
-    <fmt:setLocale value="${local}"/>
-</c:if>
 
-<fmt:setBundle basename="local" var="loc"/>
-<fmt:message bundle="${loc}" key="local.logout" var="logout"/>
-<fmt:message bundle="${loc}" key="local.back" var="back"/>
-<fmt:message bundle="${loc}" key="local.admin_page" var="admin_page"/>
-<fmt:message bundle="${loc}" key="local.cruise_name" var="cruise_name"/>
-<fmt:message bundle="${loc}" key="local.cruises" var="cruises"/>
-<fmt:message bundle="${loc}" key="local.ship" var="ship"/>
-<fmt:message bundle="${loc}" key="local.availability" var="availability"/>
-<fmt:message bundle="${loc}" key="local.start_of_cruise" var="start_of_cruise"/>
-<fmt:message bundle="${loc}" key="local.cruise_duration" var="cruise_duration"/>
-<fmt:message bundle="${loc}" key="local.description" var="description"/>
-<fmt:message bundle="${loc}" key="local.price" var="price"/>
-<fmt:message bundle="${loc}" key="local.remove" var="remove"/>
-<fmt:message bundle="${loc}" key="local.update" var="update"/>
-<fmt:message bundle="${loc}" key="local.users" var="users"/>
-<fmt:message bundle="${loc}" key="local.orders" var="orders"/>
-<fmt:message bundle="${loc}" key="local.add_cruise" var="add_cruise"/>
-<fmt:message bundle="${loc}" key="local.ships" var="ships"/>
-<fmt:message bundle="${loc}" key="local.status" var="status"/>
-<fmt:message bundle="${loc}" key="local.en" var="en"/>
-<fmt:message bundle="${loc}" key="local.ru" var="ru"/>
+<fmt:message key="local.logout" var="logout"/>
+<fmt:message key="local.back" var="back"/>
+<fmt:message key="local.admin_page" var="admin_page"/>
+<fmt:message key="local.cruise_name" var="cruise_name"/>
+<fmt:message key="local.cruises" var="cruises"/>
+<fmt:message key="local.ship" var="ship"/>
+<fmt:message key="local.availability" var="availability"/>
+<fmt:message key="local.start_of_cruise" var="start_of_cruise"/>
+<fmt:message key="local.cruise_duration" var="cruise_duration"/>
+<fmt:message key="local.description" var="description"/>
+<fmt:message key="local.price" var="price"/>
+<fmt:message key="local.remove" var="remove"/>
+<fmt:message key="local.update" var="update"/>
+<fmt:message key="local.users" var="users"/>
+<fmt:message key="local.orders" var="orders"/>
+<fmt:message key="local.add_cruise" var="add_cruise"/>
+<fmt:message key="local.ships" var="ships"/>
+<fmt:message key="local.status" var="status"/>
+<fmt:message key="local.en" var="en"/>
+<fmt:message key="local.ru" var="ru"/>
 
 <body>
-<%--<ul>--%>
-<%--    <li><a href="controller?command=pageAdminShips">${ships}</a></li>--%>
-<%--    <li><a href="controller?command=adminPage">${users}</a></li>--%>
-<%--    <li><a href="controller?command=pageAdminOrders&page=1">${orders}</a></li>--%>
+<ul>
+    <li><a href="controller?command=pageAdminShips">${ships}</a></li>
+    <li><a href="controller?command=adminPage">${users}</a></li>
+    <li><a href="controller?command=pageAdminOrders&page=1">${orders}</a></li>
 
-<%--    <li style="float:right"><a href="controller?command=logout">${logout}</a></li>--%>
-<%--    <li style="float:right"><a href="controller?command=pageAdminCruises&local=en">${en}</a></li>--%>
-<%--    <li style="float:right"><a href="controller?command=pageAdminCruises&local=ru">${ru}</a></li>--%>
-<%--</ul>--%>
+    <li style="float:right"><a href="login?logout">${logout}</a></li>
+    <li style="float:right"><a href="?local=en">${en}</a></li>
+    <li style="float:right"><a href="?local=ru">${ru}</a></li>
+</ul>
 <h1 align='center'>${admin_page}</h1>
 
 <div align='center'>

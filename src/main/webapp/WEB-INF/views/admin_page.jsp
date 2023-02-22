@@ -9,32 +9,24 @@
     <link href='<c:url value="/resources/style/style2.css"/>' rel='stylesheet' type='text/css'>
 </head>
 
-<%--<c:if test="${local == null}">--%>
-<%--    <fmt:setLocale value="ru"/>--%>
-<%--</c:if>--%>
-<%--<c:if test="${local != null}">--%>
-    <fmt:setLocale value="${local}"/>
-<%--</c:if>--%>
-
-<fmt:setBundle basename="local" var="loc"/>
-<fmt:message bundle="${loc}" key="local.logout" var="logout"/>
-<fmt:message bundle="${loc}" key="local.admin_page" var="admin_page"/>
-<fmt:message bundle="${loc}" key="local.cruises" var="cruises"/>
-<fmt:message bundle="${loc}" key="local.orders" var="orders"/>
-<fmt:message bundle="${loc}" key="local.users" var="users"/>
-<fmt:message bundle="${loc}" key="local.remove" var="remove"/>
-<fmt:message bundle="${loc}" key="local.update" var="update"/>
-<fmt:message bundle="${loc}" key="local.add_new_user" var="add_new_user"/>
-<fmt:message bundle="${loc}" key="local.login" var="login"/>
-<fmt:message bundle="${loc}" key="local.password" var="password"/>
-<fmt:message bundle="${loc}" key="local.first_name" var="first_name"/>
-<fmt:message bundle="${loc}" key="local.last_name" var="last_name"/>
-<fmt:message bundle="${loc}" key="local.email" var="email"/>
-<fmt:message bundle="${loc}" key="local.phone" var="phone"/>
-<fmt:message bundle="${loc}" key="local.role" var="role"/>
-<fmt:message bundle="${loc}" key="local.accounts_id" var="accounts_id"/>
-<fmt:message bundle="${loc}" key="local.en" var="en"/>
-<fmt:message bundle="${loc}" key="local.ru" var="ru"/>
+<fmt:message key="local.logout" var="logout"/>
+<fmt:message key="local.admin_page" var="admin_page"/>
+<fmt:message key="local.cruises" var="cruises"/>
+<fmt:message key="local.orders" var="orders"/>
+<fmt:message key="local.users" var="users"/>
+<fmt:message key="local.remove" var="remove"/>
+<fmt:message key="local.update" var="update"/>
+<fmt:message key="local.add_new_user" var="add_new_user"/>
+<fmt:message key="local.login" var="login"/>
+<fmt:message key="local.password" var="password"/>
+<fmt:message key="local.first_name" var="first_name"/>
+<fmt:message key="local.last_name" var="last_name"/>
+<fmt:message key="local.email" var="email"/>
+<fmt:message key="local.phone" var="phone"/>
+<fmt:message key="local.role" var="role"/>
+<fmt:message key="local.accounts_id" var="accounts_id"/>
+<fmt:message key="local.en" var="en"/>
+<fmt:message key="local.ru" var="ru"/>
 
 <body>
 <ul>

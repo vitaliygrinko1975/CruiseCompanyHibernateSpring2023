@@ -10,6 +10,7 @@ import ua.nure.hrynko.db.dao.interfaces.AbstractDAO;
 
 import java.util.List;
 
+
 @Repository
 public abstract class  MySqlAbstractDAO<T> implements AbstractDAO<T> {
 
