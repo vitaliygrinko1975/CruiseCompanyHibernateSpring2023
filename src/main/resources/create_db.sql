@@ -159,7 +159,7 @@ VALUES ('Среднее путишествие', 'Одесса-Стамбул-Л
 INSERT INTO cruises (name, description, price,capacity, start_of_cruise, duration,status)
 VALUES ('Большое путишествие', 'Одесса-Стамбул-Палермо-Барселона-Лиссабон-Одесса', '10000',
         2000,20221224120000, 15,'Не начался');
-INSERT INTO orders (users_id,cruises_id,status)VALUES (2, 1,'Не оплачен');
+INSERT INTO orders (users_id,cruises_id,status) VALUES (2, 1,'Не оплачен');
 
 
 SELECT *
@@ -174,6 +174,6 @@ SELECT *
 FROM cruises;
 SELECT *
 FROM orders;
-SELECT *
-FROM cruises_has_ships;
+# SELECT *
+# FROM cruises_has_ships;
 
